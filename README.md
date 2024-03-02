@@ -13,7 +13,7 @@ This project is hosted with github pages on https://bhavithran1.github.io/Portfo
 ## Responsive Website
 
 This website is built to run on miost device screens seamlessly
-
+<br>
 <div align="center">
 <img hight="200" width="300" alt="PNG" align="center" src="https://github.com/bhavithran1/bhavithran1/blob/main/assets/phone.png">
 </div>
