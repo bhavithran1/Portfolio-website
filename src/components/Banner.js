@@ -1,8 +1,8 @@
 import React from 'react';
 // images
-import Image from "../assets/avatar.svg";
+import Image from "../assets/avatar.jpg";
 // Icons
-import { FaGithub, FaYoutube, FaDribbble } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaSteam } from "react-icons/fa"
 // type animation
 import { TypeAnimation } from 'react-type-animation';
 // motion
@@ -24,9 +24,9 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"} 
               viewport={{once: false, amount: 0.7 }} 
-              className='text-[55px] font-bold leading-[0.8] lg:text-[110px]'
+              className='text-[55px] font-bold leading-[0.8] lg:text-[100px]'
               >
-              BEN <span>AIDEN</span>
+              BHAVITHRAN
             </motion.h1>
             <motion.div 
               variants={fadeIn("up", 0.4)} 
@@ -47,8 +47,7 @@ const Banner = () => {
             viewport={{once: false, amount: 0.7 }} 
             className='mb-8 max-w-lg mx-auto lg:mx-0'
             >
-              Lorem ipsum dolor sit amet. Est voluptas sunt aut quia
-              labore et delectus suscipit.
+              I'm a 17 years old Machine Learning Enthusiast and Front-End Developer from Malaysia.
             </motion.p>
 
             <motion.div 
@@ -58,8 +57,10 @@ const Banner = () => {
             viewport={{once: false, amount: 0.7 }} 
             className='flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0'
             >
-              <button className='btn btn-lg'>Contact Me</button>
-              <a href='#' className='text-gradient btn-link'>
+              <a href='#contact'>
+                <button className='btn btn-lg'>Contact Me</button>
+              </a>
+              <a href='https://github.com/bhavithran1' className='text-gradient btn-link'>
                 My Portfolio
               </a>
             </motion.div>
@@ -69,16 +70,16 @@ const Banner = () => {
             initial="hidden"
             whileInView={"show"} 
             viewport={{once: false, amount: 0.7 }} 
-            className='flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0'
+            className='flex text-[30px] gap-x-6 max-w-max mx-auto lg:mx-0'
             >
-              <a href="#">
-                <FaYoutube />
+              <a href="https://www.linkedin.com/in/bhavithran-ananthan-0207542ab/">
+                <FaLinkedin />
               </a>
-              <a href="#">
+              <a href="https://github.com/bhavithran1">
                 <FaGithub />
               </a>
-              <a href="#">
-                <FaDribbble />
+              <a href="https://steamcommunity.com/profiles/76561198800501618/">
+                <FaSteam />
               </a>
             </motion.div>
           </div>
@@ -89,7 +90,7 @@ const Banner = () => {
           whileInView={"show"} 
           className='hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]'
           >
-            <img  src={Image} alt="" />
+            <img className='rounded-full' src={Image} alt="" />
           </motion.div>
         </div>
       </div>
