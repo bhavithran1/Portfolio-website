@@ -1,11 +1,11 @@
 import React from 'react';
-// images
+// Images
 import Image from "../assets/avatar.jpg";
 // Icons
 import { FaGithub, FaLinkedin, FaSteam } from "react-icons/fa"
-// type animation
+// Type animation
 import { TypeAnimation } from 'react-type-animation';
-// motion
+// Motion
 import {motion} from "framer-motion";
 // Variants
 import { fadeIn } from "../variants";

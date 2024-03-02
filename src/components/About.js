@@ -1,95 +1,107 @@
 import React from 'react';
-// Count up
-import CountUp from 'react-countup';
-// intersection observer hook
-import { useInView } from 'react-intersection-observer';
-// motion
-import { motion } from 'framer-motion';
-// variant
+// Icon
+import { BsArrowUpRight } from "react-icons/bs";
+// Motion
+import { motion } from "framer-motion";
+// Variants
 import { fadeIn } from "../variants";
 
-const About = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-  });
+// services data
+const services = [
+  {
+    name: "UI/UX Design",
+    description:" Proficient UI/UX Designer specializing in React.js, creating intuitive interfaces with a keen eye for aesthetics.",
+    link: "Learn More",
+    arrow_url: "https://www.websitebuilderinsider.com/what-is-ui-ux-design-wikipedia/",
+    url: "https://github.com/bhavithran1/Business-React-Website-Example",
 
+  },
+  {
+    name: "Python Development",
+    description:" Proficient Python developer with expertise in frameworks like Django and Flask. Strong problem-solving skills.",
+    link: "Learn More",
+    arrow_url: "https://en.wikipedia.org/wiki/Python_(programming_language)",
+    url: "https://github.com/bhavithran1/Crypto-Data-Labeller",
+  },
+  {
+    name: "Machine Learning",
+    description:"Proficient in Machine Learning, with expertise in algorithms, data processing, and model development. Passionate about solving complex problems.",
+    link: "Learn More",
+    arrow_url: "https://en.wikipedia.org/wiki/Machine_learning",
+    url: "https://github.com/bhavithran1/Simple-Rl-tradingbot",
+  },
+  {
+    name: "Digital Marketing",
+    description:"Proficient in digital marketing, with expertise in social media strategies, data analytics, and campaign optimization.",
+    link: "Learn More",
+    arrow_url: "https://en.wikipedia.org/wiki/Digital_marketing",
+    url: "#work",
+  },
+]
+
+const About = () => {
   return (
-  <section className='section' id='about' ref={ref}>
-    <div className='container mx-auto'>
-      <div className='flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0 h-screen'>
-        {/* images */}
-        <motion.div 
+    <section className='section' id="about">
+      <div className='container mx-auto'>
+        <div className='flex flex-col lg:flex-row'>
+          {/* text & Image */}
+          <motion.div
           variants={fadeIn("right", 0.3)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{once: false, amount: 0.3}}
-          className='flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top'>
-        </motion.div>
-        {/* text */}
-        <motion.div 
+          viewport={{once: false, amount: 0.3 }}
+          className='flex-1 lg:bg-services lg:bg-bottom bg-no-repeat mix-blend-lighten mb-12 lg:mb-0'
+          >
+            <h2 className='h2 text-accent mb-6'>What I Do.</h2>
+            <h3 className='h3 max-w-[455px] mb-16'>
+              I'm a Freelance Front-end Developer with over 4 years of experience.
+            </h3>
+            
+            <a href="https://github.com/bhavithran1?tab=repositories" >
+              <button className='btn btn-sm'>See My Work</button>
+            </a>
+          </motion.div>
+          {/* services */}
+          <motion.div 
           variants={fadeIn("left", 0.5)}
           initial="hidden"
           whileInView={"show"}
           viewport={{once: false, amount: 0.3 }}
           className='flex-1'
-        >
-          <h2 className='h2 text-accent'>About me.</h2>
-          <h3 className='h3 mb-4'>
-            I'm a Freelance Front-end Developer with over 4 years of experience.
-          </h3>
-          <p className='mb-6'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Praesent mattis urna libero, at cursus est euismod id.
-          Nunc imperdiet tortor in lacus gravida ultrices.
-          </p>
-          {/* stats */}
-          <div className='flex gap-x-6 lg:gap-x-10 mb-12'>
+          >
+            {/* services list */}
             <div>
-              <div className='text-[40px] font-tertiary text-gradient mb-2'>
-                {
-                  inView ? 
-                  <CountUp start={0} end={13} duration={3} /> : null}
-              </div>
-              <div className='font-primary text-sm tracking-[2px]'>
-                Years of <br />
-                Experience
-              </div>
+              {services.map((service, index) => {
+                // destructure service
+                const {name, description, link, arrow_url, url} =  service;
+                return (
+                <div className='border-b border-white/20 h-[146px] mb-[38px] flex' 
+                key={index}
+                >
+                  <div className='max-w-[476px]'>
+                    <h4 className='text-[20px] tracking-wider font-primary font-semibold mb-6'>
+                      {name}
+                    </h4>
+                    <p className='font-secondary leading-tight'>
+                      {description}
+                    </p>
+                  </div>
+                  <div className='flex flex-col flex-1 items-end'>
+                    <a href={arrow_url} className='btn w-9 h-9 mb-[42px] flex justify-center items-center'>
+                      <BsArrowUpRight />
+                    </a>
+                    <a href={url} className='text-gradient text-sm'>
+                      {link}
+                    </a>
+                  </div>
+                </div>
+                );
+              })}
             </div>
-            <div>
-              <div className='text-[40px] font-tertiary text-gradient mb-2'>
-                {
-                  inView ? 
-                  <CountUp start={0} end={15} duration={3} /> : null}
-                  k+
-              </div>
-              <div className='font-primary text-sm tracking-[2px]'>
-                Projects <br />
-                Completed
-              </div>
-            </div>
-            <div>
-              <div className='text-[40px] font-tertiary text-gradient mb-2'>
-                {
-                  inView ? 
-                  <CountUp start={0} end={12} duration={3} /> : null}
-                  k+
-              </div>
-              <div className='font-primary text-sm tracking-[2px]'>
-                Satisfied <br />
-                Clients
-              </div>
-            </div>
-          </div>
-          <div className='flex gap-x-8 items-center'>
-            <button className='btn btn-lg'>Contact Me</button>
-            <a href="#" className='text-gradient btn-link'>
-              My Portfolio
-            </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };
 

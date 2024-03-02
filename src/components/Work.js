@@ -6,7 +6,7 @@ import { fadeIn } from "../variants"
 // img 
 import Img1 from "../assets/portfolio-img1.png";
 import Img2 from "../assets/portfolio-img2.png";
-import Img3 from "../assets/portfolio-img3.png";
+import Img3 from "../assets/portfolio-img3.jpg";
 
 const Work = () => {
   return (
@@ -26,10 +26,12 @@ const Work = () => {
               Work.
             </h2>
             <p className='max-w-sm mb-16'>
-              Consequat Lorem ex ex dolor nulla aute deserunt eu in qui ad magna
-               sint reprehenderit. Laborum officia ullamco cillum sunt. 
+              I have published many github repos to inspire and give insight
+              into what projects I've been working on these past 4 years.
             </p>
-            <button className='btn btn-sm'>View all projects</button>
+            <a href='https://github.com/bhavithran1?tab=repositories'>
+              <button className='btn btn-sm'>View all projects</button>
+            </a>
           </div>
           {/* images */}
           <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
@@ -46,7 +48,7 @@ const Work = () => {
               {/* title */}
               <div className='absolute -bottom-full left-12 group-hover:bottom-14 
               transition-all duration-700 z-50'>
-                <span className='text-3xl text-white'>Project Title</span>
+                <span className='text-3xl text-white'>React Business Website</span>
               </div>
           </div>
         </motion.div>
@@ -67,16 +69,16 @@ const Work = () => {
               <div className='absolute -bottom-full left-12 group-hover:bottom-24 
               transition-all duration-500 z-50'
               >
-                <span className='text-gradient'>UI/UX Design</span>
+                <span className='text-gradient'>Python Development</span>
               </div>
               {/* title */}
               <div className='absolute -bottom-full left-12 group-hover:bottom-14 
               transition-all duration-700 z-50'>
-                <span className='text-3xl text-white'>Project Title</span>
+                <span className='text-3xl text-white'>Financial Data Labeller</span>
               </div>
           </div>
 
-          <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
+          <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl lg:h-[320px]'>
               {/* Overlay */}
               <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
               {/* Img */}
@@ -85,12 +87,12 @@ const Work = () => {
               <div className='absolute -bottom-full left-12 group-hover:bottom-24 
               transition-all duration-500 z-50'
               >
-                <span className='text-gradient'>UI/UX Design</span>
+                <span className='text-gradient'>Reinforcement Learning</span>
               </div>
               {/* title */}
               <div className='absolute -bottom-full left-12 group-hover:bottom-14 
               transition-all duration-700 z-50'>
-                <span className='text-3xl text-white'>Project Title</span>
+                <span className='text-3xl text-white'>Trading Bot</span>
               </div>
           </div>
         </motion.div>
